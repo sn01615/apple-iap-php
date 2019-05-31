@@ -1,0 +1,22 @@
+{
+  "name": "sn01615/apple-iap-php",
+  "description": "iOS iap verify",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "YangLong",
+      "email": "168119405@qq.com"
+    }
+  ],
+  "require": {
+    "ext-json": "*",
+    "composer/ca-bundle": "^1.1",
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "sn01615\\": "src/"
+    }
+  }
+}
