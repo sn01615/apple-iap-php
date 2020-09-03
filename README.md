@@ -18,7 +18,7 @@ $cc = new Verify();
 
 $receipt = ".."; // 凭据
 
-$cc->endpoint(true);// 可选切，换到沙盒环境
+$cc->endpoint(true);// 可选，切换到沙盒环境
 
 $cc->setPassword('123');// 可选，如果是连续订阅需要密码
 
