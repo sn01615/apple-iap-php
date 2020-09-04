@@ -15,6 +15,7 @@ class Verify
 
     private $url;
     private $password;
+    private $exclude_old_transactions;
 
     public function __construct($sandbox = null)
     {
@@ -44,9 +45,10 @@ class Verify
         $jsonData = [
             'receipt-data' => $receipt,
         ];
-        if ($this->password) {
+        if ($this->password)
             $jsonData['password'] = $this->password;
-        }
+        if ($this->password)
+            $jsonData['exclude-old-transactions'] = $this->exclude_old_transactions ? true : false;
         return json_encode($jsonData);
     }
 
@@ -74,6 +76,12 @@ class Verify
     public function setPassword($password)
     {
         $this->password = $password;
+        return $this;
+    }
+
+    public function setExcludeOldTransactions($exclude)
+    {
+        $this->exclude_old_transactions = $exclude;
         return $this;
     }
 }

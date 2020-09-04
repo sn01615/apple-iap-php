@@ -15,12 +15,11 @@ use sn01615\iap\ios\Verify;
 include "../vendor/autoload.php";
 
 $cc = new Verify();
-
 $receipt = ".."; // 凭据
-
 $cc->endpoint(true);// 可选，切换到沙盒环境
-
 $cc->setPassword('123');// 可选，如果是连续订阅需要密码
+$cc->setExcludeOldTransactions(true);// 可选，将此值设置为，true以使响应仅包括任何订阅的最新续订交易。
+                                     // 仅对包含自动续订的应用收据使用此字段。
 
 $vv = $cc->query($receipt);
 
@@ -108,8 +107,5 @@ object(stdClass)#648 (3) {
 
 ## 参考链接
 
-订阅
-https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Chapters/Subscriptions.html
-
-收据
-https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Chapters/ReceiptFields.html#//apple_ref/doc/uid/TP40010573-CH106
+#### Validating Receipts with the App Store
+https://developer.apple.com/documentation/storekit/in-app_purchase/validating_receipts_with_the_app_store
