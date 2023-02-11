@@ -11,8 +11,8 @@
   ],
   "require": {
     "ext-json": "*",
-    "composer/ca-bundle": "^1.1",
-    "guzzlehttp/guzzle": "^6.3"
+    "composer/ca-bundle": "*",
+    "guzzlehttp/guzzle": "*"
   },
   "autoload": {
     "psr-4": {
